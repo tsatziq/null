@@ -1,0 +1,57 @@
+# Program: пull. simple text editor Date: 9.12.2019 #
+# Author: Matias Ikkala | Tampere University 2019   #
+
+
+*** OVERVIEW ***
+A simple text editor with clipboard created for a introductory programming class. Probably still very buggy because it has only been tested properly with one Ubuntu laptop. Please understand.
+
+*** MAIN INTERFACE ***
+The program consists of four main parts: ITEM LIST, the MAIN FRAME, the ITEM VIEWER, and the COMMAND LINE.
+
+1. ITEM LIST: 
+You can save parts of the text in the main box in here for later use. Please see COMMANDS below for the commands and shortcuts. Select items to show them in the ITEM VIEWER.
+
+2. MAIN FRAME:
+The main text editing frame. You can save parts of this to the ITEM LIST and use them later. You can save the file to the folder the program is run from, and open files. 
+
+3. ITEM VIEWER:
+Displays saved items selected in the ITEM LIST. Editing and selecting disabled.
+
+4. COMMAND LINE:
+The main commands related to the programs functions are typed here. Most commands can also be executed with keyboard shortcuts.
+
+*** COMMANDS AND SHORTCUTS ***
+--- MAIN  COMMANDS ---
+1. -help: Show this help file.
+2. CTRL+m: Tabulate between MAIN FRAME and COMMAND LINE.
+3. -gg: Clear the text in the MAIN FRAME.
+4. -quit n: Quit without saving text in the MAIN FRAME.
+5. -quit y /filename.txt/: Save the text in MAIN FRAME to the chosen filename and quit. NOTE: You can only save in the same folder. Only .txt files allowed.  
+
+--- ITEM LIST COMMANDS ---
+6. -l -/item_name/: Move item one step up in the ITEM LIST. (Shortcut: CTRL+l when item is selected).
+7. ALT+l: Toggle selection in the ITEM LIST.
+8. CTRL+r: Make selected item a child of the next item in the ITEM LIST, or detach a child from the parent. 
+	NOTE: Only two levels allowed: parents and childs.
+9. -q /filename/: delete an item from the ITEM LIST. (Shortcut: CTRL-q to delete selected items)
+
+--- SAVE ITEM AND PASTE ---
+10. -s /item_name/: Save selected text to ITEM LIST. NOTE: First text must be selected!
+11. -cs -/parent_name/ /item_name/: Save selected text as a child under the parent item of your choice.
+12. -j /item_name/: Paste the text in the place indicated by the cursor in the MAIN FRAME. (Shortcut: CTRL+j to paste selected items)
+	-NOTE: Paste multiple items by separating the item names with ":", e.g: "-j item1:item2".
+
+--- EXPORT AND IMPORT TEXT ---
+13. -ex /filename.txt/: Save the text in MAIN FRAME with the selected file name. NOTE: ONLY .txt-format supported!
+14. -im /filename.txt/: Import text from a file in the same folder. If there is text in the MAIN FRAME, it will be cleared.
+
+--- BUTTONS ---
+15. CLEAR MAIN TEXT: Clears the text in the MAIN FRAME.
+16. CLEAR SIDE TEXT: Clears the text in the ITEM VIEWER.
+
+**** TODO LIST ****
+- Make a function to save the item list to ";" separated list, and another to import lists to the program.
+- Reduce code complexity by making some repeating parts a function.
+
+****** CLEAR THE MAIN FRAME BY TYPING '-gg' ******
+
